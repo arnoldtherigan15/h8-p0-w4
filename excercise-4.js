@@ -1,5 +1,31 @@
 function cariModus(arr) {
-    // you can only write your code here!
+    arr.sort();
+    var angkaSama = [[]];
+    var indeks = 0;
+    var arrLength = 0;
+    var arrLengthindex = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i+1]) {
+            angkaSama[indeks].push(arr[i]);
+        } 
+        else {
+            angkaSama.push([]);
+            angkaSama[indeks].push(arr[i]);
+            indeks++;
+        }
+    }
+    for (var j = 0; j < angkaSama.length; j++) {
+        if (angkaSama[j].length > arrLength) {
+            arrLength = angkaSama[j].length;
+            arrLengthindex++;
+        }
+    }
+    if (angkaSama[arrLengthindex].length === 1) {
+        return -1;
+    } else if (angkaSama[arrLengthindex].length === 0) {
+        return -1
+    }
+    return angkaSama[arrLengthindex][0];
 }
   
 // TEST CASES
