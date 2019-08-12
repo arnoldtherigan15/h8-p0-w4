@@ -1,5 +1,11 @@
 function fpb(angka1, angka2) {
-    // you can only write your code here!
+    var result = [];
+    for (var i = 0; i < angka1 || i < angka2; i++) {
+        if (angka1 % i === 0 && angka2 % i === 0) {
+            result.push(i);
+        }
+    }
+    return result[result.length - 1];
 }
 
 // TEST CASES
