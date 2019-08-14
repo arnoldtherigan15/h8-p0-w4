@@ -1,24 +1,21 @@
-function highestScore (students) {
-  var result = {};
-  if (students.length === 0) {
-      return result;
-  }
-  for (var i = 0; i < students.length; i++) {
-      var object = {};
-      object.name = students[i].name;
-              object.score = students[i].score;
-      var highScore = students[i].score;
-      if (result[students[i].class] === undefined) {
-          result[students[i].class] = {};
-          if (students[i].score >= highScore) {
-              
-              // result[students[i].class].push(object);
-              // result[]
-              result[students[i].class] = object;
-          }
-      }
-  }
-  return result;
+function highestScore(students) {
+    var result = {};
+    if (students.length === 0) {
+        return result;
+    }
+    for (var i = 0; i < students.length; i++) {
+        var object = {};
+        object.name = students[i].name;
+        object.score = students[i].score;
+        var highScore = students[i].score;
+        if (result[students[i].class] === undefined) {
+            result[students[i].class] = {};
+            if (students[i].score >= highScore) {
+                result[students[i].class] = object;
+            }
+        }
+    }
+    return result;
 }
 // {
 //   foxes: { name: 'Dimitri', score: 90 },
