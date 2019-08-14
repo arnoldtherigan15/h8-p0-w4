@@ -1,5 +1,24 @@
-function graduates (students) {
-    // Code disini
+function graduates(students) {
+    var result = {};
+    if (students.length === 0) {
+        return result;
+    }
+    for (var i = 0; i < students.length; i++) {
+        var object = {};
+        if (result[students[i].class] === undefined) {
+            result[students[i].class] = [];
+            if (students[i].score > 75) {
+                object.name = students[i].name;
+                object.score = students[i].score;
+                result[students[i].class].push(object);
+            }
+        } else if (students[i].score > 75) {
+            object.name = students[i].name;
+            object.score = students[i].score;
+            result[students[i].class].push(object);
+        }
+    }
+    return result;
 }
 
 console.log(graduates([
@@ -75,6 +94,5 @@ console.log(graduates([
 //     { name: 'Viktor', score: 80 }
 //   ]
 // }
-
 
 console.log(graduates([])); //{}

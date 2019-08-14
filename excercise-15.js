@@ -1,4 +1,4 @@
-function highestScore(students) {
+function highestScore(students) { debugger
     var object = {};
     for (var i = 0; i < students.length; i++) {
         var objectBaru = {};
