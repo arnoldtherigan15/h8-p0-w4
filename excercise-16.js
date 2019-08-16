@@ -1,23 +1,21 @@
-function graduates(students) {
+function graduates (students) {
     var result = {};
-    if (students.length === 0) {
-        return result;
-    }
+    var newObject;
     for (var i = 0; i < students.length; i++) {
-        var object = {};
-        if (result[students[i].class] === undefined) {
-            result[students[i].class] = [];
-            if (students[i].score > 75) {
-                object.name = students[i].name;
-                object.score = students[i].score;
-                result[students[i].class].push(object);
-            }
-        } else if (students[i].score > 75) {
-            object.name = students[i].name;
-            object.score = students[i].score;
-            result[students[i].class].push(object);
+        newObject = {};
+        var newArray = [];
+        var currentClass = students[i].class;
+        if (result[currentClass] === undefined) {
+            result[currentClass] = newArray;}
+        if (students[i].score > 75) {
+
+            newObject['name'] = students[i].name;
+            newObject['score'] = students[i].score;
+            result[currentClass].push(newObject);
         }
     }
+    
+
     return result;
 }
 
@@ -94,5 +92,6 @@ console.log(graduates([
 //     { name: 'Viktor', score: 80 }
 //   ]
 // }
+
 
 console.log(graduates([])); //{}
